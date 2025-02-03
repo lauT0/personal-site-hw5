@@ -3,11 +3,11 @@
 
 <head>
 	<meta charset="utf-8" />
-	<meta name="description" content="personal site" />
-	<meta name="author" content="Sam Lau" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="personal site">
+	<meta name="author" content="Sam Lau">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sam Lau</title>
-	<link href="images/faviconTemp.jpg" rel="icon" />
+	<link href="images/faviconTemp.jpg" rel="icon">
 	<link href="main.css" rel="stylesheet">
 </head>
 
@@ -23,7 +23,16 @@
 	</header>
 
 	<main>
-        
+        <form action="https://httpbin.org/post" method="POST">
+            <label for="Pname">Name:
+                <input type="text" name="Pname" id="Pname">
+            </label>
+            <label for="Email">Email:
+                <input type="text" name="Email" id="Email">
+            </label>
+            <textarea name="Comments" id="Comments" cols="80" rows="5">Message</textarea>
+        </form>
+        <button>Submit</button>
 	</main>
 </body>
 

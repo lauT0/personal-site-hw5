@@ -2,13 +2,36 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8" />
-	<meta name="description" content="personal site" />
-	<meta name="author" content="Sam Lau" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="utf-8">
+	<meta name="description" content="personal site">
+	<meta name="author" content="Sam Lau">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sam Lau</title>
-	<link href="images/faviconTemp.jpg" rel="icon" />
+	<link href="images/faviconTemp.jpg" rel="icon">
 	<link href="main.css" rel="stylesheet">
+    <style>
+        cafe-capacity {
+            display: block;
+            background-color: lightblue;
+            border-radius: 5px;
+            width: 20vw;
+            height: 5vh;
+            text-align: center;
+            color: red;
+        }
+        cafe-capacity[x-fill="full"]{
+            background: linear-gradient(to right, blue 95%, lightblue 5%);
+        }
+        cafe-capacity[x-fill="busy"]{
+            background: linear-gradient(to right, blue 50%, lightblue 50%);
+        }
+        cafe-capacity[x-fill="light"]{
+            background: linear-gradient(to right, blue 20%, lightblue 0%);
+        }
+        cafe-capacity[x-fill="empty"]{
+            background: linear-gradient(to right, blue 5%, lightblue 0%);
+        }
+    </style>
 </head>
 
 <body>
@@ -19,17 +42,42 @@
             <a href="contact.html">Contact</a>
             <a href="experiement.html">extras</a>
         </nav>
+        <h1>Labs</h1>
+        <h2>This is a page to experiement!</h2>
         <search>
             <form>
                 <label for="search-field">Search:</label>
-                <input type="search" name="query" id="search-field" placeholder="Breakfast items">
+                <input type="search" name="search-field" id="search-field" placeholder="Breakfast items...">
             </form>
         </search>
-        <h1>Labs</h1>
 	</header>
 
 	<main>
-        <h1>This is a page to experiement!</h1>
+        <h2>miscellaneous experiements:</h2>
+        <hello-world></hello-world>
+        <script>
+            class HelloWorld extends HTMLElement {
+                constructor() {
+                    super();
+                    console.log("Hello World!");
+                }
+            }
+            customElements.define("hello-world", HelloWorld);
+        </script>
+        <h3>calming music:</h3>
+        <audio controls>
+            <source src="assets/downfall-3-208028.mp3">
+        </audio>
+        <h3>This is my VIS 1 final:</h3>
+        <p>Its a rotoscoped clip from <cite>Minari</cite></p>
+        <video controls width="320">
+            <source src="assets/finalVIScopy.mp4">
+        </video>
+        <h3>A changing picture?</h3>
+        <picture>
+            <source media="(min-width:1000px)" srcset="images/mouse2.jpg" alt="mouse ai">
+            <img src="images/faviconTemp.jpg" alt="mouse">
+        </picture>
         <dialog open>Do you like my hat?</dialog>
         <pre>
             preformatted stick man:
@@ -38,13 +86,51 @@
                  -||-
                   /\
         </pre>
+        <canvas id="canvas" width="100" height="100">
+            <strong>browser supporting canvas required</strong>
+        </canvas>
+        <p>This is an svg:
+            <svg width="300" height="100">
+                <rect width="400" height="100" fill="lightblue" />
+                <circle cx="90" cy="50" r="40" fill="yellow" />
+            </svg>
+        </p>
+        <script>
+            let canvas = document.getElementById("canvas");
+            let context = canvas.getContext("2d");
+            context.fillRect(10,10,10,10);
+            context.fillRect(40,10,10,10);
+            context.fillRect(20,30,20,4);
+        </script>
+        <noscript>Canvas drawing can't be displyed because Javascript is disabled</noscript>
         <p>To write code within a paragraph you can use the code tag like this: <code>int i = 0</code></p>
-        <iframe></iframe>
+        <figure>
+            <img src="images/ucsd.jpg" height="400">
+            <figcaption>Figure 1: UCSD at night, a picture I took</figcaption>
+        </figure>
+
+        <p>In my favorite movie, <cite>Howl's Moving Castle</cite> <span style="color:orange">Calcifer</span> says something truely powerful:</p>
+        <blockquote>
+            <i>May all your bacon burn.</i>
+        </blockquote>
+        <aside>
+            <p>Howl's Moving Castle is a studio Ghibli Film, made in 2004</p>
+        </aside>
+
+        <hr>
+        <h2>Sam's Cafe:</h2>
+        <h3>How busy is it?</h3>
+        <div id="status">
+            <cafe-capacity x-fill="empty">empty</cafe-capacity>
+            <cafe-capacity x-fill="light">light</cafe-capacity>
+            <cafe-capacity x-fill="busy">busy</cafe-capacity>
+            <cafe-capacity x-fill="full">full</cafe-capacity>
+        </div>
         <details>
-            To print this menu press <kbd>Ctrl</kbd> + <kbd>P</kbd>
             <summary>
                 There is some information in here
             </summary>
+            <p>To print this menu press <kbd>Ctrl</kbd> + <kbd>P</kbd></p>
         </details>
         <table>
             <caption>Sam's Cafe Breakfast menu:</caption>
@@ -59,25 +145,17 @@
                 <th>price</th>
             </tr>
             <tr>
-                <td>Toast</td>
-                <td>A perfectly toasted piece of bread with some butter</td>
+                <td><b>Toast</b></td>
+                <td>A <i>perfectly</i> toasted piece of bread with some butter</td>
                 <td>$70</td>
             </tr>
             <tr>
-                <td>Tea&Milk</td>
+                <td><b>Tea&Milk</b></td>
                 <td><dfn>English Black tea</dfn> with milk and 2 tsp of sugar.</td>
                 <td><del>$20</del> <ins>$15</ins></td>
             </tr>
-            <figure>
-                <img src="images/ucsd.jpg" height="400">
-                <figcaption>Figure 1: UCSD at night, a picture I took</figcaption>
-            </figure>
-            <p>In my favorite movie, <cite>Howl's Moving Castle</cite> Calcifer says something truely powerful:</p>
-            <blockquote>
-                <i>May all your bacon burn.</i>
-            </blockquote>
         </table>
-        <h3>ingredients</h3>
+        <h3>Ingredients</h3>
         <dl>
             <dt>Bread</dt>
             <dd>Sourdough made in house daily</dd>
@@ -85,7 +163,60 @@
             <dd>Black tea sourced from the <abbr title="United Kingdom">UK</abbr></dd>
             <dt>Milk</dt>
             <dd>2% Milk from a cool cow</dd>
+            <template>
+                <dt>item</dt>
+                <dd>description</dd>
+            </template>
         </dl>
+        <h3>Additions:</h3>
+        <ol>
+            <li>cinnamon</li>
+            <li>jam</li>
+            <li>honey</li>
+        </ol>
+        
+
+        <h3>Feedback:</h3>
+        <form action="https://httpbin.org/post" method="POST">
+            <fieldset>
+                <legend>Customer Info:</legend>
+                <label for="CustomerName">Name:
+                    <input type="text" name="CustomerName" id="CustomerName">
+                </label>
+                <label for="TableNumber">Table Number:
+                    <input type="text" name="TableNumber" id="TableNumber">
+                </label>
+            </fieldset>
+
+            <label for="rating">How would you rate your experience?
+                <input list="ratings" name="rating" id="rating">
+                <datalist id="ratings">
+                    <option value="1 star">
+                    <option value="2 star">
+                    <option value="3 star">
+                    <option value="4 star">
+                    <option value="5 star">
+                </datalist>
+            </label>
+            
+            <label for="Expansion">What would you like to see added to the menu?
+                <select name="Expansion" id="Expansion">
+                    <optgroup label="tea">
+                        <option value="black-tea">black tea</option>
+                        <option value="green-tea">green tea</option>
+                    </optgroup>
+                    <optgroup label="milk">
+                        <option value="almond-milk">almond milk</option>
+                        <option value="soy-milk">soy milk</option>
+                    </optgroup>
+                </select>
+            </label>
+
+            <textarea name="Comments" id="Comments" cols="80" rows="5">
+                Please put any other feedback here 
+            </textarea>
+        </form>
+        <button>Submit Feedback</button>
 	</main>
 
 	<footer>
