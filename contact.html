@@ -8,7 +8,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sam Lau</title>
 	<link href="images/faviconTemp.jpg" rel="icon">
-	<link href="main.css" rel="stylesheet">
+    <link media="screen and (min-width: 901px)" href="main.css" rel="stylesheet">
+    <link media="screen and (max-width: 900px)" href="main-mobile.css" rel="stylesheet">
 </head>
 
 <body>
@@ -19,10 +20,10 @@
             <a href="contact.html">Contact</a>
             <a href="experiement.html">Labs</a>
         </nav>
-        <h1>Contact</h1>
+        <h1 class="con-header">Contact</h1>
 	</header>
 
-	<main>
+	<main class="contact">
         <form action="https://httpbin.org/post" method="POST">
             <label for="Pname">Name:
                 <input type="text" name="Pname" id="Pname">
@@ -31,8 +32,8 @@
                 <input type="text" name="Email" id="Email">
             </label>
             <textarea name="Comments" id="Comments" cols="80" rows="5">Message</textarea>
+            <button>Submit</button>
         </form>
-        <button>Submit</button>
 	</main>
 </body>
 

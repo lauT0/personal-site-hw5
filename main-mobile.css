@@ -13,33 +13,20 @@
     --bg-color: #e1f5df;
     --accent-color: #f0f5f0;
     --highlight-color: #d1ded1;
+    --box-len: 90vw;
+    --intro-box: 90vw;
+    --proj-box: 95vw;
 }
-/*tablet*/
-@media only screen and (min-width: 901px){
-    :root{
-        --box-len: 75vw;
-        --intro-box: 80vw;
-        --proj-box: 50vw;
-    }
-}
-/*desktop*/
-@media only screen and (min-width: 1500px){
-    :root{
-        --box-len: 50vw;
-        --intro-box: 70vw;
-        --proj-box: 30vw;
-    }
-}
-
 
 body {
     font-family: "Kanit", sans-serif;
+    padding: 0;
     margin: 0;
 }
 
 header {
     margin: 0;
-    background-color: var(--bg-color, #e1f5df);
+    background-color: var(--bg-color);
 }
 
 nav {
@@ -61,21 +48,19 @@ a:hover{
 }
 
 div.introbox{
-    height: 400px;
+    display: flex;
+    flex-direction: column;
     margin: 1rem;
     padding: 10px;
 }
 .introbox > img {
-    float: left;
+    width: 90vw;
+    height: auto;
     clip-path: circle(40%);
     shape-outside: circle(45%);
 }
 .introbox > p{
     width: var(--intro-box);
-}
-
-br {
-    clear: left;
 }
 
 section.abt-section {
@@ -87,7 +72,7 @@ section.abt-section {
 }
 
 #experience {
-    background-color: var(--bg-color, #e1f5df);
+    background-color: var(--bg-color, #d1ded1);
 }
 
 section.abt-section > hgroup{
@@ -102,6 +87,7 @@ section.abt-section > hgroup{
     display: flex;
     flex-direction: row;
     list-style: none;
+    flex-wrap: wrap;
     gap: 1em;
 }
 
@@ -112,7 +98,7 @@ section.abt-section > hgroup{
 }
 
 main.contact {
-    padding: 5rem;
+    padding: 1rem;
 }
 
 h1.proj-header, h1.con-header {
@@ -128,9 +114,8 @@ section.proj-section {
 }
 
 section.proj-section > hgroup{
-    background-color: var(--bg-color, #e1f5df);
+    background-color: var(--bg-color, #d1ded1);
     width: var(--proj-box, 50vw);
-    
     padding: 1em;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -143,15 +128,17 @@ section.proj-section > hgroup{
 }
 
 form {
-    background-color: var(--bg-color, #e1f5df);
+    background-color: var(--bg-color, #d1ded1);
     padding: 2em;
+    height: 40vh;
     border-radius: 15px;
-    display: grid;
-    grid-template-columns: 400px 400px;
-    grid-gap: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
 }
 
 input, textarea, button{
+    margin-top: 2em;
     border-style: none;
     border-radius: 5px;
 }
@@ -161,9 +148,7 @@ button {
     background-color: var(--accent-color, #f0f5f0);
 }
 
-textarea {
-    grid-column: 1 / 3;
-}
+
 
 
 

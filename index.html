@@ -8,7 +8,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sam Lau</title>
 	<link href="images/faviconTemp.jpg" rel="icon">
-	<link href="main.css" rel="stylesheet">
+	<link media="screen and (min-width: 901px)" href="main.css" rel="stylesheet">
+    <link media="screen and (max-width: 900px)" href="main-mobile.css" rel="stylesheet">
 </head>
 
 <body>
@@ -20,40 +21,61 @@
             <a href="experiement.html">Labs</a>
         </nav>
         <br>
-        <img src="images/headshot.jpg" height="400" alt="headshot picture">
-		<h1>Sam Lau</h1>
-        <p>short paragraph about me...</p>
+        <div class="introbox">
+            <img src="images/headshot.jpg" height="400" alt="headshot picture">
+            <h1>Sam Lau</h1>
+            <p>Hello, I'm currently a 3rd year at University of California, San Diego studying Computer Science. My passion for programming began with a love for creating new things. 
+            </p>
+        </div>
         <br>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
+        <nav id="shortcuts">
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+        </nav>
+        
 	</header>
 
 	<main>
-        <section id="education">
+        <section class="abt-section" id="education">
             <h2>Education</h2>
-            <h3><strong>Computer Science (B.S.)</strong> - University of California San Diego</h3>
-            <ul>
-                <li>Relevant coursework: Web Client Languages, Intro to Parallel Computing, Principles of Computer Operating Systems,
-                    Theory of Computation, Software Engineering, Design and Analysis of Algorithms, Computer Organization & Systems
-                    Programming, Advanced Data Structures, Software Tools and Techniques, Discrete Math, Linear Algebra, Calculus II
-                    and III for Science and Engineering, Statistics</li>
-            </ul>
+            <hgroup>
+                <h3><strong>Computer Science (B.S.)</strong> - University of California San Diego</h3>
+                <ul>
+                    <li>Relevant coursework: Web Client Languages, Intro to Parallel Computing, Principles of Computer Operating Systems,
+                        Theory of Computation, Software Engineering, Design and Analysis of Algorithms, Computer Organization & Systems
+                        Programming, Advanced Data Structures, Software Tools and Techniques, Discrete Math, Linear Algebra, Calculus II
+                        and III for Science and Engineering, Statistics</li>
+                </ul>
+            </hgroup>
         </section>
 
-        <section id="experience">
+        <section class="abt-section" id="experience">
             <h2>Experience</h2>
             <hgroup>
                 <h3>iDTech International Academy - <em>Instructor</em></h3>
-                <p>ex 1 content here</p>
+                <ul>
+                    <li>Taught basic programming in Python with a focus on AI and creating video games.</li>
+                    <li>Educated small classes of students with a wide range of ages and experience with programming.</li>
+                    <li>Customized Python curriculum to fit the needs of non-native English speakers, and tailored lessons to individual
+                        experience level of each student.</li>
+                    <li>Facilitated learning through live programming demos and lessons as well as individual guidance to ensure each student
+                        gained valuable exposure to coding</li>
+                </ul>
             </hgroup>
             <hgroup>
                 <h3>Clean Energy Associates - <em>Business Information Technology Services Intern</em></h3>
-                <p>ex 2 content here</p>
+                <ul>
+                    <li>Remodeled company reports in Power BI by formulating more efficient SQL database queries, significantly improving
+                        loading times on reports for employees.</li>
+                    <li>Created Python scripts that interacted with the database to input historical data</li>
+                    <li>Debugged Power BI reports and SQL queries to correct errors in data and false trends.</li>
+                    <li>Developed workplace communication skills by holding frequent meetings with employees for projects.</li>
+                </ul>
             </hgroup>
         </section>
 
-        <section id="skills">
+        <section class="abt-section" id="skills">
             <h2>Skills</h2>
             <ul>
                 <li>C</li>

@@ -8,7 +8,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sam Lau</title>
 	<link href="images/faviconTemp.jpg" rel="icon">
-	<link href="main.css" rel="stylesheet">
+	<link media="screen and (min-width: 901px)" href="main.css" rel="stylesheet">
+    <link media="screen and (max-width: 900px)" href="main-mobile.css" rel="stylesheet">
 </head>
 
 <body>
@@ -19,27 +20,31 @@
             <a href="contact.html">Contact</a>
             <a href="experiement.html">Labs</a>
         </nav>
-        <h1>Projects</h1>
+        <h1 class="proj-header">Projects</h1>
 	</header>
 
-	<main>
-        <section id="project1">
-            <h2>Calendar App</h2>
-            <p>description of my role...</p>
-            <a href="https://github.com/cse110-sp24-group16/cse110-sp24-group16">Github</a>
-            <img src="images/prev1.png" height="400" alt="calandar app preview">
+	<main class="project">
+        <section class="proj-section" id="project1">
+            <hgroup>
+                <h2>Calendar App</h2>
+                <p>My role on the team involved implemenenting all the calendar logic, and functionality. Additionally, I worked on the design work and testing for the site.</p>
+                <a href="https://github.com/cse110-sp24-group16/cse110-sp24-group16">Github</a>
+            </hgroup>
+            <img class="preview" src="images/prev1.png" height="250" alt="calandar app preview">
         </section>
-
+        <!--
         <section id="project2">
             <h2>Project 2</h2>
             <p>description of my role...</p>
             <img src="images/prev2.svg" height="400" alt="preview 2">
         </section>
-
-        <section id="Creative">
-            <h2>Creative Work:</h2>
-            <p>Digital art and design portfolio:</p>
-            <iframe src="assets/LauPortfolio.pdf"></iframe>
+        -->
+        <section class="proj-section" id="Creative">
+            <hgroup>
+                <h2>Creative Work:</h2>
+                <p>Digital art and design portfolio:</p>
+            </hgroup>
+            <iframe class="preview" src="assets/LauPortfolio.pdf"></iframe>
         </section>
 	</main>
 
