@@ -10,8 +10,8 @@
 }
 
 :root{
-    --bg-color: #e1f5df;
-    --accent-color: #f0f5f0;
+    --bg-color: color-mix(in hsl, hsl(145, 46%, 70%), white 50%);
+    --accent-color: color(srgb 0.941 0.960 .941);
     --highlight-color: #d1ded1;
 }
 /*tablet*/
@@ -35,6 +35,17 @@
 body {
     font-family: "Kanit", sans-serif;
     margin: 0;
+}
+@keyframes skew {
+    0% {
+      transform: skewX(10deg);
+    }
+    100% {
+      transform: skewX(-10deg);
+    }
+  }
+h1{
+    animation: skew 3s;
 }
 
 header {
@@ -60,14 +71,14 @@ a:hover{
     background-color: var(--highlight-color, #d1ded1);   
 }
 
-div.introbox{
+div:has(+img){
     height: 400px;
     margin: 1rem;
     padding: 10px;
 }
 .introbox > img {
     float: left;
-    clip-path: circle(40%);
+    clip-path: circle(38%);
     shape-outside: circle(45%);
 }
 .introbox > p{
@@ -86,8 +97,22 @@ section.abt-section {
     padding: 1rem;
 }
 
+#education {
+    background-image: url(images/bg-image2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 #experience {
     background-color: var(--bg-color, #e1f5df);
+}
+
+#skills {
+    background-image: url(images/bg-image2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 section.abt-section > hgroup{

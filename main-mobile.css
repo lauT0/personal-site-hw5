@@ -56,8 +56,7 @@ div.introbox{
 .introbox > img {
     width: 90vw;
     height: auto;
-    clip-path: circle(40%);
-    shape-outside: circle(45%);
+    clip-path: circle(38%);
 }
 .introbox > p{
     width: var(--intro-box);
