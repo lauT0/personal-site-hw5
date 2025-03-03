@@ -10,7 +10,6 @@
 	<link href="images/faviconTemp.jpg" rel="icon">
     <link media="screen and (min-width: 901px)" href="main.css" rel="stylesheet">
     <link media="screen and (max-width: 900px)" href="main-mobile.css" rel="stylesheet">
-    
 </head>
 
 <body>
@@ -20,31 +19,27 @@
             <a href="projects.html">Projects</a>
             <a href="contact.html">Contact</a>
             <a href="experiement.html">Labs</a>
-            <button id="mode" hidden>light</button>
         </nav>
         <h1 class="con-header">Contact</h1>
 	</header>
 
 	<main class="contact">
-        <form id="form" action="https://httpbin.org/post" method="POST">
+        <form action="https://httpbin.org/post" method="POST">
             <label class="a" for="Pname">Name: <em>*</em>
-                <input type="text" name="Pname" id="Pname" minlength="2" maxlength="150" pattern="^[a-zA-Z]+$" required>
+                <input type="text" name="Pname" id="Pname" minlength="2" maxlength="150" pattern="^[a-zA-Z ]+$" required>
             </label>
             <label class="b" for="Email">Email: <em>*</em>
                 <input type="email" name="Email" id="Email" maxlength="320" required>
             </label>
             <label class="c" for="Comments">Comments: <em>*</em>
-                <textarea name="Comments" id="Comments" cols="80" rows="5" minlength="10" maxlength="300" required></textarea>
+                <textarea name="Comments" id="Comments" cols="80" rows="5" minlength="10" maxlength="500" required></textarea>
             </label>
             <input type="text" name="bot" id="bot" value="no" hidden>
-            <input type="text" name="formErrors" id="formErrors" value="" hidden>
-            <output id="errmsg"></output>
-            <output id="infomsg"></output>
-            <input id="submit" type="submit">
+            <output id="errmsg">error message</output>
+            <output id="infomsg">info message</output>
+            <input type="submit">
         </form>
 	</main>
-    <script src="form-function.js"></script>
-    <script src="main-script.js"></script>
 </body>
 
 </html>

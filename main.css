@@ -13,6 +13,8 @@
     --bg-color: color-mix(in hsl, hsl(145, 46%, 70%), white 50%);
     --accent-color: color(srgb 0.941 0.960 .941);
     --highlight-color: #d1ded1;
+    --base-color: white;
+    --font-color: black;
 }
 /*tablet*/
 @media only screen and (min-width: 901px){
@@ -30,11 +32,21 @@
         --proj-box: 30vw;
     }
 }
-
-
+html{
+    min-height: 100%;
+    color: var(--font-color, black);
+    background-color: var(--base-color, white);
+}
 body {
+    min-height: 100%;
     font-family: "Kanit", sans-serif;
     margin: 0;
+    color: var(--font-color, black);
+    background-color: var(--base-color, white);
+}
+main {
+    background-color: var(--base-color, white);
+    
 }
 @keyframes skew {
     0% {
@@ -64,7 +76,12 @@ nav > a{
     padding: 1em;
     text-decoration: none;
     border: none;
-    color: black;
+    color: var(--font-color, black);
+}
+nav > button {
+    border: none;
+    border-radius: 5px;
+    margin: .5rem;
 }
 
 a:hover{
@@ -78,7 +95,7 @@ div:has(+img){
 }
 .introbox > img {
     float: left;
-    clip-path: circle(38%);
+    clip-path: circle(40%);
     shape-outside: circle(45%);
 }
 .introbox > p{
@@ -116,11 +133,11 @@ section.abt-section {
 }
 
 section.abt-section > hgroup{
-    background-color: white;
     width: var(--box-len, 95vw);
     margin: 1rem;
     padding: 1em;
     border-radius: 15px;
+    background-color: var(--base-color, white);
 }
 
 #skills > ul{
@@ -172,23 +189,57 @@ form {
     padding: 2em;
     border-radius: 15px;
     display: grid;
-    grid-template-columns: 400px 400px;
+    margin: auto;
+    width: var(--box-len);
+    grid-template-columns: 1fr 1fr;
     grid-gap: 2em;
 }
+label.a {
+    grid-column: 1 / span 1;
+}
+label.b {
+    grid-column: 2 / span 1;
+}
+label.c, output {
+    grid-column: 1 / span 2;
+}
 
-input, textarea, button{
+label > input, textarea{
+    margin-top: 1rem;
+    display: block;
     border-style: none;
     border-radius: 5px;
+    width: 80%;
+    background-color: var(--base-color, white);
+    color: var(--font-color, black);
+}
+textarea{
+    width: 100%;
 }
 
-button {
-    width: 100px;
+input[type="submit"] {
+    grid-column: 1 / span 1;
     background-color: var(--accent-color, #f0f5f0);
+    border-radius: 5px;
+    border-style: none;
+    width: 40%;
+    color: var(--font-color);
 }
 
-textarea {
-    grid-column: 1 / 3;
+output{
+    margin-top: 0rem;
 }
+
+em {
+    font-style: normal;
+    color: #ed6a53;
+}
+
+#errmsg {
+    color: #ed6a53;
+}
+
+
 
 
 
