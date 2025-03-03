@@ -13,12 +13,22 @@
     --bg-color: #e1f5df;
     --accent-color: #f0f5f0;
     --highlight-color: #d1ded1;
+    --base-color: white;
+    --font-color: black;
     --box-len: 90vw;
     --intro-box: 90vw;
     --proj-box: 95vw;
 }
+html{
+    min-height: 100%;
+    color: var(--font-color, black);
+    background-color: var(--base-color, white);
+}
 
 body {
+    min-height: 100%;
+    color: var(--font-color, black);
+    background-color: var(--base-color, white);
     font-family: "Kanit", sans-serif;
     padding: 0;
     margin: 0;
@@ -41,6 +51,13 @@ nav > a{
     text-decoration: none;
     border: none;
     color: black;
+    color: var(--font-color, black);
+}
+
+nav > button {
+    border: none;
+    border-radius: 5px;
+    margin: .5rem;
 }
 
 a:hover{
@@ -75,11 +92,11 @@ section.abt-section {
 }
 
 section.abt-section > hgroup{
-    background-color: white;
     width: var(--box-len, 95vw);
     margin: 1rem;
     padding: 1em;
     border-radius: 15px;
+    background-color: var(--bg-color, #d1ded1);
 }
 
 #skills > ul{
@@ -136,18 +153,40 @@ form {
     justify-content: start;
 }
 
-input, textarea, button{
-    margin-top: 2em;
+label > input, textarea{
+    display: block;
+    margin-top: 1em;
     border-style: none;
     border-radius: 5px;
+    background-color: var(--base-color, white);
+    color: var(--font-color, black);
 }
 
-button {
-    width: 100px;
+textarea{
+    width: 100%;
+}
+
+input[type="submit"] {
+    margin-top: 1em;
     background-color: var(--accent-color, #f0f5f0);
+    border-radius: 5px;
+    border-style: none;
+    width: 40%;
+    color: var(--font-color);
 }
 
+output{
+    margin-top: 1rem;
+}
 
+em {
+    font-style: normal;
+    color: #ed6a53;
+}
+
+#errmsg {
+    color: #ed6a53;
+}
 
 
 
