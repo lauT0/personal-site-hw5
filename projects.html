@@ -37,6 +37,10 @@
         <header>
             <h1 class="proj-header">Digital Art</h1>
         </header>
+        <div id="bttn-container">
+            <button id="llocal">Load Local</button>
+            <button id="lremote">Load Remote</button>
+        </div>
         
         <div id="gallery">
             
@@ -53,10 +57,11 @@
                 const aName = this.getAttribute('aName') || 'Unknown Name';
                 const link = this.getAttribute('link') || 'Unknown Link';
                 const desc = this.getAttribute('desc') || 'Unknown Description';
-                const srcUrl = this.getAttribute('scrUrl') || 'Unknown Source';
+                const srcUrl = this.getAttribute('srcUrl') || 'Unknown Source';
                 const imgUrl = this.getAttribute('imgUrl') || 'Unknown Image';
                 this.componentHeader = document.createElement('h2');
                 this.componentHeader.textContent = aName;
+                this.componentHeader.setAttribute('class', 'artName');
                 this.appendChild(this.componentHeader);
 
                 this.picture = document.createElement('picture');
@@ -81,7 +86,12 @@
         }
         customElements.define('art-card', ArtCard);
 
-        window.addEventListener('DOMContentLoaded', async () => {
+
+        const llocalbttn = document.getElementById('llocal');
+        const lremotebttn = document.getElementById('lremote');
+
+
+        lremotebttn.addEventListener('click', async () => {
             console.log("DOM Content loaded");
             const url = "https://api.jsonbin.io/v3/b/67d4e1898561e97a50ec368d";
             try {
@@ -96,9 +106,8 @@
                 }
 
                 const jsonData = await response.json();
+                localStorage.setItem('artData', JSON.stringify(jsonData));
                 jsonData.record.forEach(work => {
-                    console.log(work.name);
-  
                     window.galleryItem = document.createElement("art-card");
                     window.galleryItem.setAttribute('aName', work.name);
                     window.galleryItem.setAttribute('link', work.linked_con);
@@ -110,6 +119,25 @@
 
             } catch (error) {
                 console.error(error.message);
+            }
+        });
+
+        llocalbttn.addEventListener('click', async () => {
+            const data = localStorage.getItem("artData");
+            if (data == null){
+                alert("no data in local storage, please load from remote")
+            } else{
+                const jData = JSON.parse(data);
+                jData.record.forEach(work => {
+                    console.log(work.source_url);
+                    window.galleryItem = document.createElement("art-card");
+                    window.galleryItem.setAttribute('aName', work.name);
+                    window.galleryItem.setAttribute('link', work.linked_con);
+                    window.galleryItem.setAttribute('desc', work.description);
+                    window.galleryItem.setAttribute('srcUrl', work.source_url);
+                    window.galleryItem.setAttribute('imgUrl', work.img_url);
+                    document.getElementById("gallery").appendChild(window.galleryItem);
+                });
             }
         });
 
