@@ -43,7 +43,7 @@
                 <h2 class="artName">Rush Poster (Theta Tau)</h2>
                 <picture class="artPic">
                     <source class="imgdes" media="(min-width: 1500px)" srcset="gallery/postcardrush.jpg">
-                    <img class="imgmob" src="gallery/postcardrushTAB.jpg" alt="poster" style="width:auto;">
+                    <img class="imgmob" src="gallery/postcardrushTAB.jpg" alt="poster">
                 </picture>
                 <a class="artLink" href="https://www.instagram.com/ucsdthetatau/" >More work on the Theta Tau instagram</a>
             </art-card>
@@ -51,7 +51,7 @@
                 <h2 class="artName">Workshop</h2>
                 <picture class="artPic">
                     <source class="imgdes" media="(min-width: 1500px)" srcset="gallery/base.jpg">
-                    <img class="imgmob" src="gallery/baseTAB.jpg" alt="poster" style="width:auto;">
+                    <img class="imgmob" src="gallery/baseTAB.jpg" alt="poster">
                 </picture>
                 <a class="artLink" href="assets/LauPortfolio.pdf" >Full portfollio linked here</a>
             </art-card>
@@ -59,7 +59,7 @@
                 <h2 class="artName">Room</h2>
                 <picture class="artPic">
                     <source class="imgdes" media="(min-width: 1500px)" srcset="gallery/room.jpg">
-                    <img class="imgmob" src="gallery/roomTAB.jpg" alt="poster" style="width:auto;">
+                    <img class="imgmob" src="gallery/roomTAB.jpg" alt="poster">
                 </picture>
                 <a class="artLink" href="assets/LauPortfolio.pdf" >Full portfollio linked here</a>
             </art-card>
@@ -67,7 +67,7 @@
                 <h2 class="artName">Untitled Poster Art</h2>
                 <picture class="artPic">
                     <source class="imgdes" media="(min-width: 1500px)" srcset="gallery/untitled.jpg">
-                    <img class="imgmob" src="gallery/untitledTAB.jpg" alt="poster" style="width:auto;">
+                    <img class="imgmob" src="gallery/untitledTAB.jpg" alt="poster">
                 </picture>
                 <a class="artLink" href="assets/LauPortfolio.pdf" >Full portfollio linked here</a>
             </art-card>
@@ -77,6 +77,31 @@
 	</main>
     <script src="main-script.js"></script>
     <script>
+        class ArtCard extends HTMLElement {
+            constructor() {
+                super();
+            }
+            connectedCallback() {
+                this.componentHeader = document.createElement('h2');
+                this.appendChild(this.componentHeader);
+
+                this.picture = document.createElement('picture');
+                this.source = document.createElement('source');
+                this.source.setAttribute('class', 'imgdes');
+                this.source.setAttribute('media', '(min-width: 1500px)');
+                this.imgDef = document.createElement('img');
+                this.imgDef.setAttribute('class', 'imgmob');
+
+                this.picture.appendChild(this.source);
+                this.picture.appendChild(this.imgDef);
+                this.appendChild(this.picture);
+
+                this.linkedCon = document.createElement('a');
+                this.linkedCon.setAttribute('class', 'artLink');
+                this.appendChild(this.linkedCon);
+            }
+        }
+        customElements.define('art-car', ArtCard);
 
     </script>
 </body>
