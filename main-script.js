@@ -1,10 +1,13 @@
 const root = document.querySelector(':root');
 const modebttn = document.getElementById("mode");
+const sun = document.getElementById("sun");
+const moon = document.getElementById("moon");
 let mode = "light";
 
 
 function applyDark(){
-    modebttn.innerHTML = "light"
+    moon.style.display = "block";
+    sun.style.display = "none";
     root.style.setProperty('--bg-color', '#2c332e');
     root.style.setProperty('--accent-color', '#3d4741');
     root.style.setProperty('--highlight-color', '#637068');
@@ -12,7 +15,8 @@ function applyDark(){
     root.style.setProperty('--font-color', 'white');
 }
 function applyLight(){
-    modebttn.innerHTML = "dark"
+    sun.style.display = "block";
+    moon.style.display = "none";
     root.style.setProperty('--bg-color', 'color-mix(in hsl, hsl(145, 46%, 70%), white 50%)');
     root.style.setProperty('--accent-color', 'color(srgb 0.941 0.960 .941)');
     root.style.setProperty('--highlight-color', '#d1ded1');
@@ -20,14 +24,18 @@ function applyLight(){
     root.style.setProperty('--font-color', 'black');
 }
 window.addEventListener("load", (event) => {
+    mode = localStorage.getItem("mode");
     modebttn.style.display = "block";
-    if (localStorage.length == 0) {
+    if (mode == null) {
         localStorage.setItem("mode", "light");
     } else{
-        mode = localStorage.getItem("mode");
         if (mode == "light"){
+            sun.style.display = "block";
+            moon.style.display = "none";
             applyLight();
         } else{
+            moon.style.display = "block";
+            sun.style.display = "none";
             applyDark();
         }
     }
