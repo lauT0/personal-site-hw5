@@ -132,7 +132,7 @@ section.proj-section {
 section.proj-section > hgroup{
     background-color: var(--bg-color, #d1ded1);
     width: var(--proj-box, 50vw);
-    padding: 1em;
+    padding: 1rem;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
 }
@@ -141,6 +141,31 @@ section.proj-section > hgroup{
     width: 30vw;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+}
+
+#gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem;
+}
+
+art-card {
+    display: block;
+    background-color: var(--bg-color);
+    margin: 1.5rem; 
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+art-card > a {
+    display: block;
+}
+
+.imgdes, .imgtab, .imgmob {
+    border-radius: 10px;
+    max-width: 90vw;
 }
 
 form {

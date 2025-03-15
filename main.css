@@ -184,6 +184,33 @@ section.proj-section > hgroup{
     border-bottom-right-radius: 15px;
 }
 
+#gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem;
+}
+
+art-card {
+    display: block;
+    background-color: var(--bg-color);
+    margin: 1.5rem; 
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+art-card > a {
+    display: block;
+}
+
+.imgdes, .imgtab, .imgmob {
+    border-radius: 10px;
+}
+
+
+
+
 form {
     background-color: var(--bg-color, #e1f5df);
     padding: 2em;
