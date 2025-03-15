@@ -10,6 +10,7 @@
 	<link href="images/faviconTemp.jpg" rel="icon">
 	<link media="screen and (min-width: 901px)" href="main.css" rel="stylesheet">
     <link media="screen and (max-width: 900px)" href="main-mobile.css" rel="stylesheet">
+    <script type="module" src="main-script.js"></script>
 </head>
 
 <body>
@@ -19,7 +20,10 @@
             <a href="projects.html">Projects</a>
             <a href="contact.html">Contact</a>
             <a href="experiement.html">Labs</a>
-            <button id="mode" hidden>light</button>
+            <button id="mode" hidden>
+                <img id="sun" class="lmode" alt="change to light" src="assets/sun-svgrepo-com.svg" hidden>
+                <img id="moon" class="lmode" alt="change to dark" src="assets/moon-svgrepo-com.svg" hidden>
+            </button>
         </nav>
         <h1 class="proj-header">Projects</h1>
 	</header>
@@ -47,7 +51,6 @@
         </div>
 
 	</main>
-    <script src="main-script.js"></script>
     <script>
         class ArtCard extends HTMLElement {
             constructor() {

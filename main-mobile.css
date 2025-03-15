@@ -58,7 +58,15 @@ nav > button {
     border: none;
     border-radius: 5px;
     margin: .5rem;
+    margin-left: auto;
+    background-color: var(--highlight-color);
 }
+
+.lmode {
+    height: 1.5rem;
+    color: var(--font-color);
+}
+
 
 a:hover{
     background-color: var(--highlight-color, #d1ded1);   
