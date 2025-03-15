@@ -13,6 +13,7 @@ function applyDark(){
     root.style.setProperty('--highlight-color', '#637068');
     root.style.setProperty('--base-color', '#1d211e');
     root.style.setProperty('--font-color', 'white');
+    root.style.setProperty('--bg-img', 'url(images/gears.png)');
 }
 function applyLight(){
     sun.style.display = "block";
@@ -22,6 +23,7 @@ function applyLight(){
     root.style.setProperty('--highlight-color', '#d1ded1');
     root.style.setProperty('--base-color', 'white');
     root.style.setProperty('--font-color', 'black');
+    root.style.setProperty('--bg-img', 'url(images/bg-image2.png)');
 }
 window.addEventListener("load", (event) => {
     mode = localStorage.getItem("mode");
