@@ -1,1 +1,2 @@
-# personal-site
+# Part 3: Other Enhancements 
+The changes I made where mostly to improve the light and dark mode feature. I changed the button placement of the light mode button on the website, so it stands out from the navigation buttons. I put a sun and moon svg for the button that changes depending on mode. I added a new background image so that it can change based on mode. I pruned the repo of unneeded things - labs page, unused images, etc.. Refactored how I loaded the script in. 
